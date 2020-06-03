@@ -1,0 +1,130 @@
+{% extends 'base.html' %}
+{% block contacto %}
+  {% load static %}
+  
+    <div class="container">
+        <!-- Contenido -->
+        <section class="text-center dark-grey-text">
+        
+            <h3 class="font-weight-bold mb-4 indigo-text">Contáctanos</h3>
+            <p class="text-center w-responsive mx-auto mb-5">Queremos que te pongas en contacto con nosotros para compartir tus comentarios, opiniones y necesidades o para recibir una asesoría completa sobre un producto o servicio de tu interés.</p>
+
+            <!-- Grid row -->
+            <div class="row col-md-12">
+                <div class="col-md-6 mb-md-0 mb-5">
+
+                    <div class="row">
+                        <a href="https://github.com/Amonbe8080/LandingPage-Django" class="btn btn-elegant"><i class="fab fa-github pr-2"></i>GitHub</a>
+                        <a href="" class="btn btn-primary"><i class="fab fa-linkedin-in pr-2"></i>LinkedIn</a>
+                    </div>
+
+                    <form action="" method="POST" class="mb-md-0 mb-5">
+                        {% csrf_token %}
+                        <div class="row">
+                            <div class="col-md-12">
+                                <label for="" class="">Tipo de petición</label>
+                                <div class="md-form mb-0">
+                                {{ formulario.tipomsj }}
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="md-form mb-0">
+                            {{ formulario.usuario }}
+                            <label for="contact-name" class="active">Nombre</label>
+                        </div>
+
+                        <div class="md-form mb-0">
+                            {{ formulario.correo }}
+                            <label for="contact-email" class="active">Correo</label>
+                        </div>
+
+                        <div class="col-md-12">
+                            <div class="md-form">
+                                {{ formulario.mensaje }}
+                                <label for="contact-message" class="active">Mensaje</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-9 text-center text-md-left">
+                                {% if "ok" in request.GET %}
+                                    <span class="alert alert-success">Mensaje enviado correctamente</span>
+                                {% endif %}
+
+                                {% if "fail" in request.GET %}
+                                    <span class="alert alert-danger">No se ha podido enviar el mensaje.</span>
+                                {% endif %}
+                            </div>
+                            <div class="col-md-3 text-center text-md-left">
+                                <button type="submit" name="sndmsj" class="btn btn-md btn-rounded peach-gradient">Enviar</b>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Mapa -->
+                <div class="col-md-6 text-center">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3965.706634403332!2d-75.57035023480874!3d6.3022237274435415!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e442f25d6670d4d%3A0x8043999e5e767b96!2sSENA%20-%20Centro%20de%20Tecnolog%C3%ADa%20de%20la%20Manufactura%20Avanzada!5e0!3m2!1ses-419!2sco!4v1590635759342!5m2!1ses-419!2sco" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                </div>
+                <!-- Mapa -->
+
+            </div>
+        </section>
+        <!-- Contenido -->
+    </div>
+
+    <div class="container my-5">
+
+        <!--Section: Content-->
+        <section class="">
+            <div class="row d-flex justify-content-center">
+
+            <div class="col-md-6 col-lg-3 mb-4 text-center">
+                <h4 class="h1 font-weight-normal mb-3">
+                <i class="fas fa-file-alt indigo-text"></i>
+                <span class="d-inline-block count-up" data-from="0" data-to="100" data-time="2000">58</span>
+                </h4>
+                <p class="font-weight-normal text-muted">Peticiones</p>
+            </div>
+
+            <div class="col-md-6 col-lg-3 mb-4 text-center">
+                <h4 class="h1 font-weight-normal mb-3">
+                <i class="fas fa-layer-group indigo-text"></i>
+                <span class="d-inline-block count1" data-from="0" data-to="250" data-time="2000">15</span>
+                </h4>
+                <p class="font-weight-normal text-muted">Quejas</p>
+            </div>
+
+            <div class="col-md-6 col-lg-3 mb-4 text-center">
+                <h4 class="h1 font-weight-normal mb-3">
+                <i class="fas fa-pencil-ruler indigo-text"></i>
+                <span class="d-inline-block count2" data-from="0" data-to="330" data-time="2000">58</span>
+                </h4>
+                <p class="font-weight-normal text-muted">Solicitudes</p>
+            </div>
+            
+            <div class="col-md-6 col-lg-3 mb-4 text-center">
+                <h4 class="h1 font-weight-normal mb-3">
+                <i class="fab fa-react indigo-text"></i>
+                <span class="d-inline-block count3" data-from="0" data-to="430" data-time="2000">35</span>
+                </h4>
+                <p class="font-weight-normal text-muted">Felilitaciones</p>
+            </div>
+
+            </div>
+
+        </section>
+        <!--Section: Content-->
+
+    </div>
+
+    <style>
+        footer{
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+  
+{% endblock %}

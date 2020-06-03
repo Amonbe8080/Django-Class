@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>{% block titulo %}{% endblock %}</title>
+
+    {% load static %}
+    <!-- Font Awesome -->     
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+    <!-- Bootstrap -->
+    <link href="{% static 'assets/css/bootstrap.min.css' %}" rel="stylesheet" type="text/css"/>
+    <!-- MDBootstrap -->
+    <link href="{% static 'assets/css/mdb.min.css' %}" rel="stylesheet" type="text/css"/>
+    <style type="text/css">
+        html,
+        body,
+        header,
+        .view {
+            height: 80%;
+        }
+
+        @media (max-width: 740px) {
+
+            html,
+            body,
+            header,
+            .view {
+                height: 1000px;
+            }
+        }
+
+        @media (min-width: 800px) and (max-width: 850px) {
+
+            html,
+            body,
+            header,
+            .view {
+                height: 650px;
+            }
+        }
+
+        @media (min-width: 800px) and (max-width: 850px) {
+            .navbar:not(.top-nav-collapse) {
+                background: #1C2331 !important;
+            }
+        }
+
+        body{
+            margin-top: 120px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Menu -->
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark indigo scrolling-navbar">
+        <div class="container">
+
+            <!-- Brand -->
+            <a class="navbar-brand" href="/">
+                <img src="{% static 'assets/img/icon.png' %}" width="40" height="40" />
+                <strong>Digital Market</strong>
+            </a>
+
+            <!-- Collapse -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Links -->
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+                <!-- Left -->
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item ">
+                        <a class="nav-link" href="#Principio">Producto
+                            <span class="sr-only">(current)</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#Presentacion">Presentación</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'nosotros' %}">Nosotros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'contacto' %}">Contacto</a>
+                    </li>
+                </ul>
+
+                <!-- Right -->
+                <ul class="navbar-nav nav-flex-icons">
+                    <li class="nav-item">
+                        <a href="" class="nav-link rounded peach-gradient" target="_blank">Ver más
+                        </a>
+                    </li>
+                </ul>
+
+            </div>
+
+        </div>
+    </nav>
+    <!-- Menu -->
+
+    {% block contenido %}
+    {% endblock %}
+
+    {% block producto %}
+    {% endblock %}
+
+    {% block descripcion %}
+    {% endblock %}
+
+    {% block nosotros %}
+    {% endblock %}
+
+    {% block contacto %}
+    {% endblock %}
+
+    <!-- Footer -->
+    <footer class="page-footer fixed-bottom col-md-12 font-small indigo py-4 white-text">
+
+        <!-- Footer Elements -->
+        <div class="container">
+
+        <div class="row">
+            <div class="col-md-4">
+            <h3 class="font-weight-bold mb-0">Digital Market</h3>
+            </div>
+            <div class="col-md-4">
+            <ul class="list-unstyled d-flex justify-content-center mb-0 mt-2 text-uppercase">
+                <li>
+                <a class="mx-3" role="button" href="https://github.com/Amonbe8080/Digital-Market">Repositorio</a>
+                </li>
+                <a class="mx-3" role="button" href="http://www.scielo.org.co/pdf/cesd/v8n2/v8n2a04.pdf">Derechos</a>
+                <li>
+                
+                </li>
+            </ul>
+            </div>
+            <div class="col-md-4">
+            <ul class="list-unstyled d-flex justify-content-end mb-0 mt-2">
+                <li>
+                <a class="mx-3" role="button"><i class="fab fa-facebook-f"></i></a>
+                </li>
+                <li>
+                <a class="mx-3" role="button"><i class="fab fa-twitter"></i></a>
+                </li>
+                <li>
+                <a class="mx-3" role="button"><i class="fab fa-instagram"></i></a>
+                </li>
+            </ul>
+            </div>
+        </div>
+
+        </div>
+        <!-- Footer Elements -->
+    </footer>
+    <!-- Footer -->
+
+    <!-- JQuery JS -->
+    <script src="{% static 'assets/js/jquery-3.4.1.min.js' %}" type="text/javascript"></script>
+    <!-- Popper JS -->
+    <script src="{% static 'assets/js/popper.min.js' %}" type="text/javascript"></script>
+    <!-- Bootstrap JS -->
+    <script src="{% static 'assets/js/bootstrap.min.js' %}" type="text/javascript"></script>
+    <!-- MDBootstrap JS -->
+    <script src="{% static 'assets/js/mdb.min.js' %}" type="text/javascript"></script>
+</body>
+
+</html>
