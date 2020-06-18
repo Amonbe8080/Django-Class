@@ -2,8 +2,10 @@ astroid==2.4.0
 bson==0.5.8
 colorama==0.4.3
 dataclasses==0.6
+dj-database-url==0.5.0
 Django==2.2.12
 django-ckeditor==5.9.0
+django-heroku==0.3.1
 django-js-asset==1.2.2
 djongo==1.2.32
 dnspython==1.16.0
@@ -12,6 +14,7 @@ isort==4.3.21
 lazy-object-proxy==1.4.3
 mccabe==0.6.1
 Pillow==7.1.2
+psycopg2==2.8.5
 pylint==2.5.0
 pylint-django==2.0.15
 pylint-plugin-utils==0.6
@@ -21,5 +24,5 @@ pytz==2020.1
 six==1.14.0
 sqlparse==0.2.4
 toml==0.10.0
+whitenoise==5.1.0
 wrapt==1.12.1
-python==3.8.2
