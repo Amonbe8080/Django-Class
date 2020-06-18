@@ -2,7 +2,7 @@ astroid==2.4.0
 bson==0.5.8
 colorama==0.4.3
 dataclasses==0.6
-Django==2.2.12
+Django==2.2.13
 django-ckeditor==5.9.0
 django-js-asset==1.2.2
 djongo==1.2.32
