@@ -1,0 +1,93 @@
+{% extends 'base.html' %}
+
+{% block nosotros %}
+{% load static %}
+
+<!-- <h2>{{Titulos}}</h2>
+    <h2><span>{{descripcion}}</span></h2> -->
+
+<!-- Modal -->
+
+<!-- LOADER -->
+<div id="preloader">
+    <div class="loader-container">
+        <div class="progress-br float shadow">
+            <div class="progress__item"></div>
+        </div>
+    </div>
+</div>
+<!-- END LOADER -->
+
+<!-- Start header -->
+<header class="top-navbar">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">
+                <img src="{% static 'assets/images/logo-1.jpg' %}" alt="" />
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbars-host"
+                aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbars-host">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"><a class="nav-link" href="{% url 'index' %}">Inicio</a></li>
+                    <li class="nav-item active"><a class="nav-link" href="{% url 'nosotros' %}">Nosotros</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Caracteristicas </a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'contacto' %}">Contacto</a></li>
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+</header>
+<!-- End header -->
+
+<div class="all-title-box">
+    <div class="container text-center">
+        <h1 style="color: #05747B">Quienes somos <br><span class="m_1 ">{{title_1 }}</span></h1>
+    </div>
+</div>
+
+
+<div id="testimonials" class="parallax section db parallax-off"
+    style="background-image:url('{% static 'assets/images/parallax_04.jpg' %}');">
+    <div class="container">
+        <div class="section-title text-center">
+            <h3>EQUIPO DE TRABAJO</h3>
+            <p>Estos son los integrantes del equipo de trabajo encargados del desarrollo de la aplicativo</p>
+        </div><!-- end title -->
+
+
+        <div class="row">
+            <div class="col-md-12 col-sm-12">
+                <div class="testi-carousel owl-carousel owl-theme">
+
+
+                    <div class="testimonial clearfix">
+                        {% for user in object_list %}
+                        <div class="desc">
+                            <h3><i class="fa fa-quote-left"></i>{{ user.ProfeUser }}</h3>
+                            <p class="lead">Soy una persona con buena pasiencia y trato de entender las necesidades de
+                                mi equipo de trabajo...</p>
+                        </div>
+                        <div class="testi-meta">
+                            <img src="{% static 'assets/' %}{{ user.fotoUser }}" alt="" class="img-fluid">
+                            <h4>{{ user.NombUser }} {{ user.ApeUser }}</h4>
+                            <p class="lead">{{ user.teleUser }}</p>
+                        </div>
+                        {% endfor %}
+                    </div>
+                    <!-- end testimonial -->
+
+
+                </div><!-- end carousel -->
+            </div><!-- end col -->
+        </div><!-- end row -->
+    </div><!-- end container -->
+</div><!-- end section -->
+<!-- ALL JS FILES -->
+<a href="#" id="scroll-to-top" class="dmtop global-radius"><i class="fa fa-angle-up"></i></a>
+{% endblock %}

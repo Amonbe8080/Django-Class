@@ -1,0 +1,95 @@
+{% extends 'base.html' %}
+
+{% block nosotros %}
+{% load static %}
+<div class="container">
+  <!--Section: Nosotros -->
+  <section>
+    <h3 class="h3 text-center mb-5 indigo-text">¿Quienes Somos?</h3>
+    <!--Grid row-->
+    <div class="row wow fadeIn">
+
+      <!--Grid column-->
+      <div class="col-lg-6 col-md-12 px-4">
+
+        {% for article in object_list %}
+            <!--First row-->
+            <div class="row">
+              <div class="col-1 mr-3">
+                <img src="{% static 'assets/' %}{{ article.fotoUser}}" class="rounded-circle border-2 border-indigo" width="84"
+                  height="94" />
+              </div>
+              <div class="col-10 ml-4">
+                <h5 class="feature-title indigo-text">{{ article.nombUser }} {{ article.apelUser }}
+                  <a href="" target="_blank"><i class="fab fa-github mr-2"></i></a>
+                  <a href="https://www.linkedin.com/in/{{ article.nombUser }}{{ article.apelUser }}/" target="_blank"><i
+                      class="fab fa-linkedin"></i></a>
+                </h5>
+                <p class="grey-text ml-2">{{ article.profeUser }}</p>
+                <p class="indigo-text ml-2">+54 {{ article.teleUser }}</p>
+              </div>
+            </div>
+            <!--/First row-->
+            <div style="height:30px"></div>
+        {% empty %}
+            <li>No articles yet.</li>
+        {% endfor %}
+
+      </div>
+      <!--/Grid column-->
+
+      <!--Grid column-->
+      <div class="col-lg-6 col-md-12">
+        <img src="{% static 'assets/img/nosotros.jpg' %}" class="img-fluid z-depth-1-half rounded-circle img-fluid"
+          alt="">
+      </div>
+      <!--/Grid column-->
+
+    </div>
+    <!--/Grid row-->
+  </section>
+  <!--Section: Nosotros-->
+</div>
+<div class="container">
+
+  <!--Section: Content-->
+  <section class="text-center dark-grey-text pb-5">
+    
+    <!-- Section heading -->
+    <h2 class="font-weight-bold indigo-text">¿Que dicen de nosotros?</h2>
+
+    <!-- Grid row -->
+    <div class="row">
+
+      <!-- Grid column -->
+      <div class="col-md-6 mb-4">
+
+        <div class="card-img-100 mx-auto mb-4">
+          <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20(2).jpg" class="z-depth-1 rounded-circle img-fluid" alt="smaple image">
+        </div>
+        <p class="mt-3 mb-4 text-muted">"Lorem ipsum dolor sit amet eos adipisci, consectetur adipisicing elit sed ut perspiciatis unde omnis."</p>
+        <p class="font-italic font-weight-normal">- Anna Morian</p>
+        
+      </div>
+      <!-- Grid column -->
+      
+      <!-- Grid column -->
+      <div class="col-md-6 mb-4">
+
+        <div class="card-img-100 mx-auto mb-4">
+          <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20(15).jpg" class="z-depth-1 rounded-circle img-fluid" alt="smaple image">
+        </div>
+        <p class="mt-3 mb-4 text-muted">"Neque cupiditate assumenda in maiores repudiandae mollitia architecto elit sed adipiscing elit."</p>
+        <p class="font-italic font-weight-normal">- Teresa May</p>
+
+      </div>
+      <!-- Grid column -->
+
+    </div>
+    <!-- Grid row -->
+    
+  </section>
+  <!--Section: Content-->
+
+</div>      
+{% endblock %}
